@@ -3,7 +3,7 @@
 %% V1.3
 %% 2007/01/11
 %% by Michael Shell
-%% See:
+
 %% http://www.michaelshell.org/
 %% for current contact information.
 %%
@@ -64,7 +64,7 @@
 % draft mode.
 %
 \documentclass[conference]{IEEEtran}
-\usepackage{blindtext, graphicx}
+\usepackage{blindtext, graphicx, subfigure}
 % Add the compsoc option for Computer Society conferences.
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
@@ -194,7 +194,7 @@
 
 % *** SPECIALIZED LIST PACKAGES ***
 %
-%\usepackage{algorithmic}
+\usepackage{algorithmic}
 % algorithmic.sty was written by Peter Williams and Rogerio Brito.
 % This package provides an algorithmic environment fo describing algorithms.
 % You can use the algorithmic environment in-text or within a figure
@@ -266,7 +266,9 @@
 
 
 %\usepackage[caption=false]{caption}
+
 %\usepackage[font=footnotesize]{subfig}
+
 % subfig.sty, also written by Steven Douglas Cochran, is the modern
 % replacement for subfigure.sty. However, subfig.sty requires and
 % automatically loads Axel Sommerfeldt's caption.sty which will override
@@ -407,7 +409,7 @@ Email: celio@ic.uff.br}}
 
 \begin{abstract}
 %\boldmath
-  Smart Grids are the evolution of the current electric system to meet the challenge of increasing demands for energy in this century by integrating the eletric grid with data communication network. The challenge of this network is to fulfill safety requirements: reliability and resilience required in order to meet various types of services and applications. The use of wireless mesh networks can provide scalability and resilience to this communication network, but there are challenges that need to be evaluated and analyzed so that it is in fact a solution for communications in Smart Grids. This paper proposes an algorithm for dynamic selection of gateways in a muultihoming Smart Grid network improving performance when a gateway's fault occurs on congested environments. The results indicate that the proposed algorithm makes the routing protocol more ......
+  Smart Grids are the evolution of the current electric system to meet the challenge of increasing demands for energy in this century by integrating the eletric grid with data communication network. The challenge of this network is to fulfill safety requirements: reliability and resilience required in order to meet various types of services and applications. The use of wireless mesh networks can provide scalability and resilience to this communication network, but there are challenges that need to be evaluated and analyzed so that it is in fact a solution for communications in Smart Grids. This paper proposes an algorithm for dynamic selection of gateways in a muultihoming Smart Grid network improving performance when a gateway's fault occurs on congested environments. The results indicate that the proposed algorithm makes the routing protocol more robust and resilient against ......
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
@@ -445,24 +447,16 @@ Modernization the existing electricity grid aims to solve these problems, improv
 
 Smart Grids require two-way communication that has specificities of delay, bandwidth, frequency of updates, reliability, security and time response for each distinct application in their different fields \cite{Gungor2011}. Advanced Metering Infrastructure (AMI) is fundamental and the first step to realize a Smart Grid\cite{4781067,5484223}. Your security requirements should provide robustness and resilience to prevent or recover from cyber attacks or problems caused by interference, providing the stability and reliability to AMI communication. This communication may use available wired or wireless technologies that support the exchange information between components of AMI \cite{Saputro2012,4547164}. Different types of technologies can be used: cellular technology \cite{5589988}, WiMAX, ZigBee \cite{5589988}, RF Mesh \cite{5622071}, IEEE 802.11-based Wireless Mesh Networks (WMN) and PLC \cite{5479945}. 
 
-PLC (\emph{Power Line Communication}) is the most used wired technology \cite{Saputro2012}, but has limitations. In case of failures, such as physical disruption of power lines, would not be possible to maintain communication between AMI components \cite{Gungor2006}. Wireless networks offer more benefits than wired networks such as lower cost, ease of deployment and the available signal in a large area \cite{5589988}. 
+PLC (\emph{Power Line Communication}) is the most used wired technology \cite{Saputro2012}, but has limitations. In case of failures, such as physical disruption of power lines, would not be possible to maintain communication between AMI components \cite{Gungor2006}. Wireless networks offer more benefits than wired networks such as lower cost, ease of deployment and the available signal in a large area \cite{5589988}. Among all wireless technologies WMN has advantages compared to single-hop infrastructure network architecture, because it communicates in multi-hop way that extends the coverage of the network and allowing communication with alternative paths in case of failures in links \cite{5622071,Fang2012}. 
 
-Among all wireless technologies WMN has advantages compared to single-hop infrastructure network architecture, because it communicates in multi-hop way that extends the coverage of the network and allowing communication with alternative paths in case of failures in links \cite{5622071,Fang2012}.
+The challenge is to adapt WMN to communication requirements required by AMI, where hundreds of meters communicate with Utility's head-end through DAP (Data Aggregation Point), which are the gateways of this network. This large number of nodes is the main challenge for the WMN \cite{Akyildiz2005}, since more than 100 meters may be associated to one DAP. If they  send data simultaneously should cause congestion to the network. A way to reduce this problem is the use of multiple DAP. There are other problems related to the propagation conditions of the external environment that provide attenuation, interference and variation to the signal strength \cite{Gungor2011}. The routing protocol must be able to find reliable routes to improve performance and meet the requirements of AMI network.
 
+The new wireless communication devices have the capacity to operate in different transmission rates and are sensitive to propagation conditions generating another challenge for routing and its metric. The latter should take into account the fluctuations of link quality and transmission
+rate for consistent assessment of costs.
 
-O desafio é adequar as WMN aos requisitos de comunicação requeridos pela AMI, onde centenas de medidores se comunicam com a  Central de Processamento através dos DAP (\emph{Data Aggregation Point}) que são os \emph{gateways} desta rede. A grande quantidade de nós é o principal desafio para uma WMN \cite{Akyildiz2005}, já que neste ambiente pode-se ter mais de 100 medidores associados a um DAP que podem simultaneamente enviar dados causando congestionamento na rede. Uma forma de mitigar este problema é o uso de múltiplos DAP. \cite{Gungor2011} cita problemas relacionados às condições de propagação do ambiente externo que proporcionam atenuações, interferências e variações, além de estarem sujeitas a ataques. 
+Given the problems faced by routing protocol in WMN to comply with AMI communication requirements, we propose an algorithm that dynamically selects a DAP for communication between meters and headend. In this problem, we assumed that each meter can connect, through multiple hops, to a set of DAP. The main goal of this algorithm, called \ emph {DAP} Dynamic Selection Algorithm (DDSA), is to increase the reliability, robustness and resiliency using multiple DAP by meters thus improving performance in a presence of DAP's failure, since there is the probability of choosing other DAP for communication with the headend.
 
-O protocolo de roteamento tem que ser capaz de encontrar rotas confiáveis para não degradar a performance e poder atender aos requisitos da AMI. Os equipamentos de comunicação sem fio têm a capacidade de operar em diversas taxas de transmissão e são sensíveis às condições de propagação gerando outro desafio para o roteamento e para sua métrica. Esta última deve levar em consideração as oscilações que a qualidade dos enlaces sofre e a taxa de transmissão do enlace para uma avaliação coerente dos custos.
-
-
-Neste trabalho dado os problemas enfrentados pelo roteamento em WMN para atender aos requisitos de comunicação da AMI, propomos um algoritmo de seleção dinâmica de DAP  para a comunicação entre medidores e a Central de Processamento (\emph{headend}). Neste problema, assume-se que cada medidor pode se conectar, através de múltiplos saltos, a um conjunto de DAP. O objetivo principal deste algoritmo, denominado \emph{DAP Dynamic Selection Algorithm} (DDSA), é aumentar a confiabilidade e a resiliência com a utilização de múltiplos DAPs pelos medidores melhorando com isso a performance em ambientes congestionados e com interferências, já que é possível a escolha de rotas menos congestionadas ou de outros DAP em caso de quebra de rota.
-
-
-O restante desse texto está estruturado da seguinte forma. A Seção 2 descreve as particularidades da rede de dados da AMI e seus desafios. A Seção 3 apresenta trabalhos relacionados. A Seção 4 apresenta e explica o princípio de funcionamento do DDSA. A Seção 5 apresenta os resultados obtidos nas simulações. A Seção 6 conclui o artigo e apresenta ideias de trabalhos futuros.
-
-
-
-
+The organization of the paper is as follows. In Section II, discloses the particularities of the AMI communication network and its challenges and problems. Section III presents related work. Section IV describes and explains the working principle of DDSA. Section V presents the results obtained in the simulations. Section VI concludes the paper and presents ideas for future work.
 
 
 % needed in second column of first page if using \IEEEpubid
@@ -552,14 +546,75 @@ O restante desse texto está estruturado da seguinte forma. A Seção 2 descreve
 
 \section{Background}
 
-\subsection{AMI}
+\subsection{A Brief Overview of AMI}
+
+
+The modernization of the current electricity grid involves a large use of information technology to move the current system towards Smart Grid using communication that allows bidirectional flow of information between the different subsystems and the headend. Nearly 8\% of all energy generated is lost along the transmission lines and 20\% of the total generation capacity is only to supply peak demands, which represent only 5\% of the total demand \cite{Farhangi2010}. About 90\% of power outages and disturbances are assigned to distribution subsystem, thus the success of a Smart Grid depends on the deployment of an interconnected distribution subsystem. 
+
+AMI is the main application of distribution subsystem that aims to improve the reliability and  a change in paradigm  to one where customer demand adjusts to the power generation. AMI is basically composed of smart meters, gateways or DAP and  Utility's headend, all interconnected by a communication network. The meters send the measurement data to the headend through DAP and this traffic is characterized by the exchange of short messages.  
+
+These messages have a payload that varies from tens to hundreds of bytes and are sent periodically, typically in a 15 minutes interval, and remain inactive the rest of the time \cite{SRS:13,4547164}. They can be sent in a single data packet originated by meters connected to a DAP. The headend can send commands and requests to meters also through DAP.
+
 
 \subsection{Problem Statement}
+
+According \cite{Gungor2013}, it is necessary for each meter a band from 10 to 100 Kbps and the latency should be less than 2000 ms. Since investments in the power sector are long-lasting, it is desirable that the AMI should also support long-term operations \cite{5484223}. New necessities for information may arise and making the requirements more stringent such as latency that should be less than hundreds or tens of milliseconds in applications that need information in real time.
+
+The AMI traffic can be classified into regular and on-demand. It's regular when data consumption are automatically sent by the meters at predetermined intervals time \cite{Plan2011,4547164} and constitute the majority of data traffic flowing through AMI \cite{5484223}. The on-demand traffic is constituted of alert messages from meters, command and control sent by the headend  to meters and DAP and the responses to these commands \cite{Plan2011}. In the latter type of traffic can occur a greater increase in network congestion due to the request for sending information,  by  headend to a large numbers of meters, that would send simultaneously this data. DAP is a single point of failure, because all traffic between meters and headend or vice versa flows through it, a failure in it will stop the entire network from working.
+
+The residential density of the area, which can be a dense urban area or rural area, determines the amount of meters per area, which according to \cite{Plan2011} can be classified into rural, suburban or urban scenario, with density varying from 10, 800 or 2000 meters per km\textsuperscript{2}, respectively. The external environment conditions in combination with the number of meter will determine the level of interference and attenuation in communication between meters and DAP will have. This may cause breaks in routes and loss of performance due to the increase in packet loss and retransmissions \cite{farooq2013energy}. 
+
+
+Due to the peculiarities of the AMI network and a large amount of meters acting as routers/clients mesh, there is a possibility of problems with loops and broken route \cite{ramachandran2007routing}, causing a degradation in performance that may lead to a non-compliance with communication requirements. The density of the WMN varies with the number of households in the region which can be dense or a very sparse area. Thus the routing protocol should handle this variation, providing an acceptable level of service regardless of WMN density. Another problem is the increased amount of collisions near the DAP because all packets are routing to it \cite{Saputro2012}.
+
+
+\begin{figure*}[ht]
+  \centering
+  \mbox{
+    \subfigure[DDSA-30\label{DDSA-30}]{\includegraphics[scale=.35]{IEEE-consolidados/G-troca-gw-ddsa30.jpg}}\quad
+    \subfigure[DDSA-85\label{DDSA-85}]{\includegraphics[scale=.35]{IEEE-consolidados/G-troca-gw-ddsa85.jpg}}\quad
+    \subfigure[Multi-DAP\label{Multi-DAP}]{\includegraphics[scale=.35]{IEEE-consolidados/G-troca-gw-multidap.jpg}}
+  }
+  \caption{DAP's choice by node 16}
+  \label{n16-dap}
+\end{figure*}
+
+\begin{figure*}[ht]
+  \centering
+  \mbox{
+    \subfigure[DDSA-30\label{DDSA30-2}]{\includegraphics[scale=.35]{IEEE-consolidados/G-troca-gw-ddsa30-2.jpg}}\quad
+    \subfigure[DDSA-85\label{DDSA85-2}]{\includegraphics[scale=.35]{IEEE-consolidados/G-troca-gw-ddsa85-2.jpg}}\quad
+    \subfigure[Multi-DAP\label{MultiDAP-2}]{\includegraphics[scale=.35]{IEEE-consolidados/G-troca-gw-multidap-2.jpg}}
+  }
+  \caption{Packets delivered by node 16}
+  \label{n16-dap2}
+\end{figure*}
 
 
 \section{Related Work}
 
+The work in \cite{Gungor2006}  proposes the use of WMN in AMI where multiple domains of mesh networks are connected by a WiMAX backbone. This architecture provides redundant paths between meters eliminating problems like nodes failed and route break increasing their resilience and making network fault tolerant. However, as there is only one DAP acting as gateway in each WMN domain, if it becomes unavailable there will be no communication between the meters and the headend. This is the same problem \cite{Silva2010}, where the WMN consists of meters, routers and collectors. The meters communicate with routers or directly to collectors, the latter controls up to 25,000 meters and routers on a single network.
+
+The work in \cite{Silva2010} makes use of multiple gateways to increase the WMN resilience, cause in addition to providing  providing redundant paths also provides redundancy of gateway.Another work that solves the problem of multiple gateways is \cite{ClaytonR.daSilva2011}  which also preserves the gateway output for each connection, but also adds load balancing. These approaches are applied to WMN that serve as the backbone for internet access. In these access networks is common to use the technique NAT (Network Address Translation), which does not exist in AMI, being necessary to preserve the connection with the gateway output and no breakage of TCP connections semantics occur.
+
+The work in \cite{6412861} and \cite{Gharavi2011} are designed to suit the requirements of AMI networks and make use of multiple DAP for communication between meters and headend modifying the HWMP protocol (Wireless Hybrid mesh Protocol). The work in \cite{Gharavi2011} although solve the problem of discard of the queue, still suffers from other problems such as protocol stability of routes and loops that according to the authors is a characteristic of distributed backpressure system adopted by them. However, neither of them has been evaluated the protocol behavior in an environment with a DAP failure, nor using adaptation of transmission rate, which increases the problem of instability of routes. They use as a base protocol that has scalability problems and congestion caused by control messages \cite{5473885} making it difficult to use in AMI.
+
+
+Our proposal DDSA makes use of multiple DAP for communication between meters and Central Processing and differs from \cite{6412861} and \cite{Gharavi2011} to be independent of the routing protocol and metric, and can be implemented in that best suit the implementation of AMI and also be designed to improve performance in environments with DAP failure.
+In DDSA, each new send data, meters probabilistically choose DAP to which the data packet is sent. 
+Thus, improved performance and network security by distributing traffic between the DAP to each transmission, as the probability of selection of each one, and provide resilience as if one is unavailable, it is possible to choose another.
+
+
 \subsection{Routing Metrics}
+ 
+
+MARA (Metric-Aware Rate Adaptation) \cite{6051505} is a mechanism that joins routing metric with rate adaptation for transmission in WMN through the concept of cross-layer design.
+It uses statistical information of routing metrics to select the best rate and in turn, based on this choice, the metric can estimate the actual cost of the link.
+Thus, metrics and rate adaptation share information and make decisions together resulting in better choices of routes by the routing protocol.
+The calculation of the metric of a link is based on a conversion process in which first is estimated the SNR (Signal-to-noise ratio) from the link success probability of probe packets in a given transmission rate that can be of 1, 18, 36 or 54 Mbps.
+With this SNR estimation is possible, by means of a probability function loss estimate the PER (Packet Error Rate) to other rates. Its advantage is that it solves the problem that metric and choice of rate are studied separately, although they are strongly related.
+
+
 
 \section{DDSA (DAP Dynamic Selection Algorithm)}
 
@@ -569,6 +624,61 @@ O restante desse texto está estruturado da seguinte forma. A Seção 2 descreve
 \subsection{Simulation Environment}  
 
 \subsection{Simulation Results}
+
+
+\begin{figure}[ht]
+  \centering
+  \label{intv-dap}{\includegraphics[scale=.21]{IEEE-consolidados/G-wo-rcv-pkt.jpg}} 
+  \caption{Sum of intervals without receiving packets in any DAP}
+  \label{sum-intv}
+\end{figure}
+
+
+\begin{figure}[ht]
+  \centering
+  \mbox{
+    \label{pdf-n16-per}{\includegraphics[scale=.21]{IEEE-consolidados/G-pdf-periodo-n16.jpg}}
+  }
+  \caption{Packet delivery of node 16 in 15 seconds intervals}
+  \label{pdf-n16-per}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \mbox{
+    \label{pdf-n16-per}{\includegraphics[scale=.21]{IEEE-consolidados/G-pdf-periodo-n16-2.jpg}}
+  }
+  \caption{Packet delivery of node 16 in 15 seconds intervals}
+  \label{pdf-n16-per}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \mbox{
+    \subfigure[all nodes\label{pdf-n16-per}]{\includegraphics[scale=.33]{IEEE-consolidados/G-todos-periodo.jpg}}
+    \subfigure[central nodes (12 to 23)\label{pdf-n16-per}]{\includegraphics[scale=.33]{IEEE-consolidados/G-centro-periodo.jpg}}
+  }
+  \caption{Packet delivery in 15 seconds intervals}
+  \label{pdf-n16-per}
+\end{figure}
+
+
+\begin  {figure}[ht]
+\begin{minipage}[b]{.4\linewidth}
+\centering
+\subfigure[DDSA-30]
+{\label{fase:a}\includegraphics[scale=.21]{IEEE-consolidados/G-no-fases-30.jpg}}
+
+\subfigure[DDSA-85]
+{\label{fase:b}\includegraphics[scale=.21]{IEEE-consolidados/G-no-fases-85.jpg}}
+
+\subfigure[Multi-DAP]
+{\label{fase:c}\includegraphics[scale=.21]{IEEE-consolidados/G-no-fases-mdap}}
+\end{minipage}
+\caption{Packet delivery in three periods: 150-300, 300-450 and 450-650.}
+\label{fases}
+\end{figure}
+
 
 \section{Conclusion}
 
