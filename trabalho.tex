@@ -459,90 +459,6 @@ Given the problems faced by routing protocol in WMN to comply with AMI communica
 The organization of the paper is as follows. In Section II, discloses the particularities of the AMI communication network and its challenges and problems. Section III presents related work. Section IV describes and explains the working principle of DDSA. Section V presents the results obtained in the simulations. Section VI concludes the paper and presents ideas for future work.
 
 
-% needed in second column of first page if using \IEEEpubid
-%\IEEEpubidadjcol
-
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation Results}
-%\label{fig_sim}
-%\end{figure}
-
-% Note that IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
-
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command, the
-% \label for the overall figure must come after \caption.
-% \hfil must be used as a separator to get equal spacing.
-% The subfigure.sty package works much the same way, except \subfigure is
-% used instead of \subfloat.
-%
-%\begin{figure*}[!t]
-%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
-%\label{fig_second_case}}}
-%\caption{Simulation results}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-
-
-% An example of a floating table. Note that, for IEEE style tables, the 
-% \caption command should come BEFORE the table. Table text will default to
-% \footnotesize as IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
-
-
-% Note that IEEE does not put floats in the very first column - or typically
-% anywhere on the first page for that matter. Also, in-text middle ("here")
-% positioning is not used. Most IEEE journals use top floats exclusively.
-% Note that, LaTeX2e, unlike IEEE journals, places footnotes above bottom
-% floats. This can be corrected via the \fnbelowfloat command of the
-% stfloats package.
 
 \section{Background}
 
@@ -571,9 +487,9 @@ Due to the peculiarities of the AMI network and a large amount of meters acting 
 \begin{figure*}[ht]
   \centering
   \mbox{
-    \subfigure[DDSA-30\label{DDSA-30}]{\includegraphics[scale=.35]{IEEE-consolidados/G-troca-gw-ddsa30.jpg}}\quad
-    \subfigure[DDSA-85\label{DDSA-85}]{\includegraphics[scale=.35]{IEEE-consolidados/G-troca-gw-ddsa85.jpg}}\quad
-    \subfigure[Multi-DAP\label{Multi-DAP}]{\includegraphics[scale=.35]{IEEE-consolidados/G-troca-gw-multidap.jpg}}
+    \subfigure[DDSA-30\label{DDSA-30}]{\includegraphics[scale=.33]{IEEE-consolidados/G-troca-gw-ddsa30.jpg}}\quad
+    \subfigure[DDSA-85\label{DDSA-85}]{\includegraphics[scale=.33]{IEEE-consolidados/G-troca-gw-ddsa85.jpg}}\quad
+    \subfigure[Multi-DAP\label{Multi-DAP}]{\includegraphics[scale=.33]{IEEE-consolidados/G-troca-gw-multidap.jpg}}
   }
   \caption{DAP's choice by node 16}
   \label{n16-dap}
@@ -582,9 +498,9 @@ Due to the peculiarities of the AMI network and a large amount of meters acting 
 \begin{figure*}[ht]
   \centering
   \mbox{
-    \subfigure[DDSA-30\label{DDSA30-2}]{\includegraphics[scale=.35]{IEEE-consolidados/G-troca-gw-ddsa30-2.jpg}}\quad
-    \subfigure[DDSA-85\label{DDSA85-2}]{\includegraphics[scale=.35]{IEEE-consolidados/G-troca-gw-ddsa85-2.jpg}}\quad
-    \subfigure[Multi-DAP\label{MultiDAP-2}]{\includegraphics[scale=.35]{IEEE-consolidados/G-troca-gw-multidap-2.jpg}}
+    \subfigure[DDSA-30\label{DDSA30-2}]{\includegraphics[scale=.33]{IEEE-consolidados/G-troca-gw-ddsa30-2.jpg}}\quad
+    \subfigure[DDSA-85\label{DDSA85-2}]{\includegraphics[scale=.33]{IEEE-consolidados/G-troca-gw-ddsa85-2.jpg}}\quad
+    \subfigure[Multi-DAP\label{MultiDAP-2}]{\includegraphics[scale=.33]{IEEE-consolidados/G-troca-gw-multidap-2.jpg}}
   }
   \caption{Packets delivered by node 16}
   \label{n16-dap2}
@@ -600,9 +516,9 @@ The work in \cite{Silva2010} makes use of multiple gateways to increase the WMN 
 The work in \cite{6412861} and \cite{Gharavi2011} are designed to suit the requirements of AMI networks and make use of multiple DAP for communication between meters and headend modifying the HWMP protocol (Wireless Hybrid mesh Protocol). The work in \cite{Gharavi2011} although solve the problem of discard of the queue, still suffers from other problems such as protocol stability of routes and loops that according to the authors is a characteristic of distributed backpressure system adopted by them. However, neither of them has been evaluated the protocol behavior in an environment with a DAP failure, nor using adaptation of transmission rate, which increases the problem of instability of routes. They use as a base protocol that has scalability problems and congestion caused by control messages \cite{5473885} making it difficult to use in AMI.
 
 
-Our proposal DDSA makes use of multiple DAP for communication between meters and Central Processing and differs from \cite{6412861} and \cite{Gharavi2011} to be independent of the routing protocol and metric, and can be implemented in that best suit the implementation of AMI and also be designed to improve performance in environments with DAP failure.
-In DDSA, each new send data, meters probabilistically choose DAP to which the data packet is sent. 
-Thus, improved performance and network security by distributing traffic between the DAP to each transmission, as the probability of selection of each one, and provide resilience as if one is unavailable, it is possible to choose another.
+Our proposal DDSA makes use of multiple DAP for communication between meters and headend, and differs from \cite{6412861} and \cite{Gharavi2011} to be designed to improve performance in environments with DAP failure and also be independent of the routing protocol and metric, and can be implemented in that best suit the implementation of AMI.
+In DDSA, each new send data, meters probabilistically choose DAP to which the data packet is sent through. 
+Thus, improved performance and network resilience by distributing traffic between the DAP to each transmission, as the probability of selection of each one, and provide resilience as if one is unavailable, it is possible to choose another.
 
 
 \subsection{Routing Metrics}
@@ -615,7 +531,6 @@ The calculation of the metric of a link is based on a conversion process in whic
 With this SNR estimation is possible, by means of a probability function loss estimate the PER (Packet Error Rate) to other rates. Its advantage is that it solves the problem that metric and choice of rate are studied separately, although they are strongly related.
 
 
-
 \section{DDSA (DAP Dynamic Selection Algorithm)}
 
 
@@ -624,6 +539,17 @@ With this SNR estimation is possible, by means of a probability function loss es
 \subsection{Simulation Environment}  
 
 \subsection{Simulation Results}
+
+Na figura~\ref{n16-dap} foi escolhido um nó localizado geograficamente com a mesma proximidade entre 2 DAP e no meio da rede. Esta escolha é adequada para entendermos como é o comportamento da proposta na escolha dos DAP e o seu impacto no desempenho. Como visto, a escolha do limiar afeta o comportamento na escolha de DAP e notamos como o limiar mais baixo faz com que seja escolhido o DAP mais afastado e não somente os 2 mais próximos. O limiar mais alto faz com que a proposta faça escolhas alternando entre os 2 DAP mais próximos  com melhores métricas excluindo o terceiro DAP por possuir métrica pior. A referência (multi-dap) já não faz trocas entre os DAP, somente ao final é escolhido o DAP 2 por ter superado a métrica do DAP 1. Após a ocorrêcia da falha no tempo 300s verifica-se que este comportamento irá determinar como será o comportamento futuro após a ocorrência da falha do DAP 2 (fig~\ref{n16-dap2}). Notamos que a proposta com limiar de 30\% (fig~\ref{n16-dap2}(a)) o nó 16 sempre  entrega pacotes para um dos DAP. A proposta com limiar de 85\% (fig~\ref{n16-dap2}(b)) o comportamento foi diferente chegando a ficar 64 seg sem entregar um pacote para um dos DAP após a falha. A referência (fig~\ref{n16-dap2}(c)) notamos um comportamento mais sensível em relação à falha chegando a ficar 81 seg sem entregar um pacote para um dos DAP.
+
+Para verificarmos este comportamento para outros nós foi somado todos os intervalos em que não houve recebimento de pacotes em qualquer um dos DAP (fig~\ref{sum-intv}). Percemos que este comportamento se repete para todos os nós da região central da rede (nós 12 ao 23). No nó 14 a proposta com limiar de 30\% somou 82 seg sem enviar pacotes, mas que ficou muito abaixo dos 166 seg da proposta com 85\% e da referencia com 187 seg. no total. Este nó e o nó 13 são os mais próximos do DAP  falho sofrendo mais influência desta falha. 
+
+
+Na figura~\ref{pdf-n16-per} é analisado o comportamento de entrega de pacotes do nó 16 durante a falha em intervalos de 15 seg. Nota-se que no DDSA-30\% a queda na taxa não foi tão acentuada quanto nos outros ficando cerca de 28\% melhor que o DDSA-85\% e 30\% que o Multi-DAP. Isto evidencia que a tendência de distribuir mais pacotes do DDSA-30\% entre os DAP o torna mais robusto que os outros quando ocorre uma falha de DAP.
+
+O comportamento de todos os nós é apresentado na figura~\ref{pdf-per-a} notamos que o DDSA-30\% tem um desempenho um pouco menor que os outros. Isto se deve ao fato dele fazer uso de DAP com métricas não tão boas e que estão distantes do nó de origem. Esta escolha reflete na sua performance ficando um pouco pior em relação aos outros que utilizam DAP com métricas melhores e mais próximos ao nó de origem. Em relação a região central da rede, a mais afetada pela falha do DAP, a situação se inverte (fig.~\ref{pdf-centro-per-b}) com o DDSA-30\% melhor 16,5\% que o DDSA-85\% logo após a falha e de até 17\% em relação ao Multi-DAP. Após o tempo 450 seg as curvas se cruzam demonstrando que a partir deste tempo o protocolo de roteamento toma conhecimento da falha do DAP.
+
+Por último na figura~\ref{fases} é apresentado um histograma comparando cada etapa da simulação onde temos o período antes da falha de 150s até 300s, durante a falha de 300s até 450s e de recuperação da falha de 450s até 650s. É observado que a região central da rede é a mais afetada pela falha do DAP. O DDSA-30\% é o menos afetado pela falha com resultados bem acima do DDSA-85\% e o Multi-DAP com a maioria dos nós da região central apresentando taxas muito baixas.
 
 
 \begin{figure}[ht]
@@ -646,25 +572,25 @@ With this SNR estimation is possible, by means of a probability function loss es
 \begin{figure}[ht]
   \centering
   \mbox{
-    \label{pdf-n16-per}{\includegraphics[scale=.21]{IEEE-consolidados/G-pdf-periodo-n16-2.jpg}}
+    \label{pdf-n16-per2}{\includegraphics[scale=.21]{IEEE-consolidados/G-pdf-periodo-n16-2.jpg}}
   }
   \caption{Packet delivery of node 16 in 15 seconds intervals}
-  \label{pdf-n16-per}
+  \label{pdf-n16-per2}
 \end{figure}
 
 \begin{figure}[ht]
   \centering
   \mbox{
-    \subfigure[all nodes\label{pdf-n16-per}]{\includegraphics[scale=.33]{IEEE-consolidados/G-todos-periodo.jpg}}
-    \subfigure[central nodes (12 to 23)\label{pdf-n16-per}]{\includegraphics[scale=.33]{IEEE-consolidados/G-centro-periodo.jpg}}
+    \subfigure[all nodes\label{pdf-per-a}]{\includegraphics[scale=.33]{IEEE-consolidados/G-todos-periodo.jpg}}
+    \subfigure[central nodes (12 to 23)\label{pdf-centro-per-b}]{\includegraphics[scale=.33]{IEEE-consolidados/G-centro-periodo.jpg}}
   }
   \caption{Packet delivery in 15 seconds intervals}
-  \label{pdf-n16-per}
+  \label{pdf-per}
 \end{figure}
 
 
 \begin  {figure}[ht]
-\begin{minipage}[b]{.4\linewidth}
+\begin{minipage}[b]{.91\linewidth}
 \centering
 \subfigure[DDSA-30]
 {\label{fase:a}\includegraphics[scale=.21]{IEEE-consolidados/G-no-fases-30.jpg}}
@@ -706,8 +632,6 @@ With this SNR estimation is possible, by means of a probability function loss es
 % use section* for acknowledgement
 \section*{Acknowledgment}
 
-
-The authors would like to thank .....
 
 This work is supported in part by CNPq, CAPES, FAPERJ, TBE/ANEEL and CELESC/ANEEL.
 
