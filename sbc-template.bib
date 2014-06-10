@@ -358,6 +358,15 @@
   issn = {1949-3053}
 }
 
+@TECHREPORT{RFC6272,
+  author = {F. Baker, D. Meyer},
+  title = {Internet Protocols for the Smart Grid},
+  institution = {Cisco Systems},
+  year = {2011},
+  type = {RFC 6272},
+  month = june
+}
+
 @INPROCEEDINGS{638201,
   author = {Kevin R. Fall},
   title = {{A delay-tolerant network architecture for challenged Internets}},
@@ -554,8 +563,7 @@
   issn = {1389-1286},
   keywords = {Electric system automation},
   owner = {victor},
-  timestamp = {2014.02.03},
-  url = {http://www.sciencedirect.com/science/article/pii/S1389128606000193}
+  timestamp = {2014.02.03}
 }
 
 @ARTICLE{Gungor2010,
@@ -745,6 +753,47 @@
 	grid infrastructure;wireless LAN;wireless mesh networks;Fluctuations;IEEE
 	802.11 Standards;Mesh networks;Routing;Smart grids;Wireless mesh
 	networks}
+}
+
+@INPROCEEDINGS{5547188,
+  author = {Khalifa, T. and Naik, K. and Alsabaan, M. and Nayak, A. and Goel,
+	N.},
+  title = {Transport protocol for smart grid infrastructure},
+  booktitle = {Ubiquitous and Future Networks (ICUFN), 2010 Second International
+	Conference on},
+  year = {2010},
+  pages = {320-325},
+  month = {June},
+  __markedentry = {[victor:5]},
+  abstract = {There is an emerging class of applications in which there is a need
+	to reliably transport data from a large number of low rate devices
+	(e.g., hundreds of thousands) to a central server. Atop the list
+	of such applications is smart grid infrastructure. Other applications
+	include meteorological applications, such as monitoring of weather,
+	pollution, and allergy conditions. These applications are characterized
+	by the existence of a >>> large number of small Internet Protocol
+	(IP) devices sending small packets at a low rate to the same server.<<<
+	 Even though individual data rates are low, aggregation of these
+	rates produce a >>>significant amount of traffic that can disrupt
+	the communication function of other applications<<<<. Because individual
+	devices produce data at a low rate, the >>>>>>> transmission control
+	protocol's (TCP) congestion control mechanism is rendered ineffective,
+	thereby causing (i) excessive retransmission of packets; and (ii)
+	degrading the throughput of other competing applications.<<<<<<<
+	To address the above problems, we introduce the concept of aggregation
+	at the communication transport level. A TCP aggregator node is added
+	between the data sources and the central server. It splits the TCP
+	connections between the sources (e.g., smart meters) and the data
+	collection server. The aggregator collects data from the individual
+	sources and reliably forwards the data to the collection server.
+	The new strategy provides better response to traffic conditions and,
+	most importantly, makes congestion control and flow control useful.
+	Through extensive NS-2 simulations, we show the effectiveness of
+	the TCP aggregator approach to mitigating the problems in terms of
+	the throughput and packet drop rate performance metrics.},
+  doi = {10.1109/ICUFN.2010.5547188},
+  keywords = {Internet;Reliability;Throughput;Transport protocols;Wireless communication;Wireless
+	sensor networks}
 }
 
 @ARTICLE{Khurana2010,
@@ -1028,8 +1077,6 @@
   author = {NS-2},
   title = {The network simulator - NS-2},
   year = {2013},
-  note = {Dispon\'ivel em: http://www.isi.edu/nsnam/ns/ . Acesso em: fevereiro
-	de 2013},
   booktitle = {The network simulator - NS-2},
   keywords = {The network simulator - NS-2},
   owner = {victor},
@@ -1042,14 +1089,12 @@
   author = {Open Smart Grid - OpenSG},
   title = {Smart Grid Network System Requirements Specification},
   year = {2013},
-  note = {Dispon\'ivel em: http://osgug.ucaiug.org/UtiliComm/. Acesso em: dezembro
-	de 2013},
   __markedentry = {[victor:1]},
   booktitle = {Smart Grid Network System Requirements Specification},
   organization = {OpenSG},
   owner = {victor},
   timestamp = {2014.02.10},
-  url = {Smart Grid Network System Requirements Specification},
+  url = {http://osgug.ucaiug.org/UtiliComm/},
   urlaccessdate = {02 dezembro de 2013},
   volume = {1}
 }
@@ -1350,8 +1395,7 @@
 
 @MISC{Verizon2010,
   author = {Verizon},
-  title = {Comments – Request for Information on Smart Grid Communications
-	Requirements},
+  title = {Comments Request for Information on Smart Grid Communications Requirements},
   year = {2010},
   note = {Disponível em: http://energy.gov/sites/prod/files/gcprod/documents/Verizon_Comments_CommsReqs.pdf.
 	Acesso em: junho de 2013},

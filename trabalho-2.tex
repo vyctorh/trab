@@ -1,0 +1,818 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+\usepackage{blindtext, graphicx, subfigure}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+\usepackage{algorithm2e}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+
+%\usepackage[font=footnotesize]{subfig}
+
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\usepackage{graphicx}
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{A Resilient  Dynamic Gateway Selection Algorithm Based on Quality Aware Metric for Smart Grids}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Victor Hugo Okabayashi, Diego Passos, C\' elio V. N. Albuquerque}
+\IEEEauthorblockA{Instituto de Computa\c{c}\~ ao\\Universidade Federal Fluminense(UFF)\\Niter\' oi, RJ, Brasil\\
+Email: \{vhugo,dpassos,celio\}@ic.uff.br}}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+%\boldmath
+  Smart Grids are the evolution of the current electrical power system to meet the challenge of increasing demands for energy in this century by fully integrating the electrical power grid with data communication networks. The challenge faced by this kind of network is to fulfill reliability and resilience requirements in order to meet various types of services and applications. The use of wireless mesh networks can provide scalability and resilience to this communication network, but there are issues that need to be addressed  so that it is in fact a solution for communications in Smart Grids. This paper proposes an algorithm for dynamic selection of gateways in a multihoming Smart Grid network, improving performance when a gateway's failure occurs. It uses a probabilistic approach for choosing gateways with good metrics. The results indicate that the proposed algorithm makes the routing protocol more robust and resilient against gateways failure compared to a existing algorithms for dynamic gateway selection.
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway.
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+ wireless mesh networks, gateway selection, smart grid communication).
+
+\end{IEEEkeywords}
+
+
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+
+The current electrical power system has an outdated hierarchical architecture that does not meet the future demands of energy consumption due to various limitations, such as limited generation capacity, one-way flow of energy (generation-transmission-distribution-consumption), low and deficient communication and reliability problems \cite{Farhangi2010}. 
+An evolution of the existing electrical power system aims at solving these problems, improving efficiency, reliability and security, integrating the use of renewable energy produced by consumers, departing from the current one-way flow and deploying a two-way flow for energy and communication \cite {Farhangi2010,Moslehi2010}. A two-way communication infrastructure is essential for Smart Grids \cite{Gungor2011}, because it needs to send commands and to receive information from its components and sensors  in real time, with reliability, allowing monitoring, maintenance and control of the entire grid. 
+
+Smart Grids have specific requirements of delay, bandwidth, frequency of updates, reliability, security and time response for each distinct application in their different fields \cite{Gungor2011}. Advanced Metering Infrastructure (AMI) is fundamental and is the first step to realize a Smart Grid\cite{4781067,5484223}. Its security requirements should provide robustness and resilience to prevent or recover from problems, providing stability and reliability to the AMI network. This communication may use available wired or wireless technologies that support the exchange information between components of the AMI \cite{Saputro2012,4547164}. Different types of technologies can be used: cellular technology \cite{5589988}, WiMAX, ZigBee \cite{5589988}, RF Mesh \cite{5622071}, IEEE 802.11-based Wireless Mesh Networks (WMN) and Power Line Communication (PLC) \cite{5479945}. 
+
+PLC is a wired technology \cite{Saputro2012}, but it has limitations. In case of failures, such as physical disruption of power lines, it would not be possible to maintain communication between AMI components \cite{Gungor2006}. Wireless networks offer more benefits than wired networks, such as lower cost, ease deployment and availability signal in large areas \cite{5589988}. Among all wireless technologies, WMN has advantages compared to single-hop infrastructured network architectures, since it communicates in a multi-hop way that extends the coverage of the network and allows communication with alternative paths in case of failures\cite{5622071,Fang2012}. 
+
+WMN, however, must be adapted to the communication requirements of AMI, where hundreds of meters communicate with Utility's headend through a Data Aggregation Point (DAP). DAPs are the gateways of this network. Typically, a AMI is constituted of networks connecting meters in the same dwelling connected to one single DAP. Each DAP is connected to the headend through AMI wide area network. The large number of nodes is the main challenge for the WMN \cite{Akyildiz2005}, since more than 100 meters may be associated to one single DAP.  If all meters  send data simultaneously this can cause congestion in the network. A way to mitigate this problem is the use of multiple DAPs. The routing protocol must be able to find reliable routes to improve performance and meet the requirements the AMI network.
+
+%The current wireless communication devices have the capacity to operate in different transmission rates and are sensitive to propagation conditions generating another challenge for routing and its metric. The latter should take into account the fluctuations of link quality and transmission rate for consistent assessment of costs.
+
+Given the problems faced by routing protocols in WMN, to comply with AMI communication requirements, we propose an algorithm that dynamically selects DAPs for communication between meters and the headend. In this problem, we assumed that each meter can connect, through multiple hops, to a set of DAPs. The main goal of this algorithm, called Dynamic DAP Selection Algorithm (DDSA), is to increase the reliability, robustness and resiliency using multiple DAPs by meters thus improving performance in a presence DAP's failure, since it exploits the option of choosing other DAP for communication with the headend.
+
+The organization of the paper is as follows. Section II, describes the particularities of the AMI communication network, its challenges and problems. Section III presents the related work. Section IV proposes and explains the working principle of DDSA. Section V presents the results obtained in simulations. Section VI concludes the paper and presents ideas for future work.
+
+
+
+\section{Background}
+
+%\subsection{A Brief Overview of AMI}
+
+
+The evolution of the current electrical grid involves a large use of information technology to move the current system towards a Smart Grid, using communication that allows a bidirectional flow of information between the different subsystems and the headend. Nearly 8\% of all generated energy is lost along the transmission lines and 20\% of the total generation capacity is only to support peak demands, which represent only 5\% of the total demand \cite{Farhangi2010}. About 90\% of power outages and disturbances are assigned to the distribution subsystem, thus the success of a Smart Grid depends on the deployment of a reliable interconnected distribution subsystem. 
+
+The AMI improves the reliability and  changing the paradigm  to one where customer demand adjusts to the power generation. AMI is basically composed of smart meters, gateways (or DAPs) and  Utility's headend, all interconnected by communication networks. 
+The headend is connected to multiple DAPs, which in turn have connections to  multiple smart meters.
+The meters send the measurement data to the headend through a DAP and this traffic is characterized by the exchange of short messages.  
+
+These messages have a payload that varies from tens to hundreds of bytes and are sent periodically, typically in a 15 minutes interval, and remain inactive the rest of the time \cite{SRS:13,4547164}. The headend can send commands and requests to meters also through DAPs.
+
+
+According to \cite{Gungor2013}, each meter requires a band from 10 to 100 Kbps and the latency should be less than 2000 ms. Since investments in the power sector are long-lasting, it is desirable that the AMI should also support long-term operations \cite{5484223}. New demands for information may arise, making the requirements more stringent such as latency that should be less than hundreds of milliseconds in applications that need information in real time \cite{Yan2013,5484223}.
+
+The AMI traffic can be classified into regular and on-demand. It is regular when data is automatically sent by the meters at predetermined intervals time \cite{Plan2011,4547164} and constitute the majority of data traffic flowing through AMI \cite{5484223}. The on-demand traffic is composed of alert messages from meters, command and control sent by the headend  to meters and the responses to these commands \cite{Plan2011}. In the latter type of traffic an increase in network congestion can occur due to the request for sending information by headend to a large number of meters, that would send their replies simultaneously. The DAP is a single point of failure, because all traffic between meters and headend or vice versa flows through it. Hence a DAP failure would prevent the entire network from working.
+
+The residential density determines the amount of meters per area, which according to \cite{Plan2011} can be classified into rural, suburban or urban scenario, with density varying from 10, 800 or 2000 meters per km\textsuperscript{2}, respectively. The external environment conditions in combination with the number of meters will determine the level of interference and attenuation in communication between meters and DAPs.
+
+
+Due to the peculiarities of the AMI network and due to a large amount of meters acting as routers/clients mesh, there is a possibility of problems with loops and broken routes \cite{ramachandran2007routing}, causing a degradation in performance that may lead to failure communication requirements. Thus the routing protocol should handle this variation, providing an acceptable level of service regardless of WMN density. Another problem is the increased amount of collisions near the DAP because all packets are forwarded to it \cite{Saputro2012}.
+
+
+
+
+\section{Related Work}
+
+The work in \cite{Gungor2006}  proposes the use of WMN in AMI where multiple domains of mesh networks are connected by a WiMAX backbone. This architecture provides redundant paths between meters mitigating problems like broken routes due to nodes failures increasing their resilience and making the network fault tolerant. However, since this work considers only one single DAP acting as gateway in each WMN domain, if it becomes unavailable there will be no communication between the meters and the headend. This is the same problem studied by \cite{5622071}, where the WMN consists of meters, routers and collectors. The meters communicate with routers or directly to collectors, and the latter controls up to 25,000 meters and routers on a single network.
+
+The work in \cite{Silva2010} makes use of multiple gateways to increase the WMN resilience, because in addition to providing redundant paths, it also provides gateway redundancy. 
+
+%Another work that solves the problem of multiple gateways is \cite{ClaytonR.daSilva2011}  which also preserves the  output gateway for each connection, but also adds load balancing. These approaches are applied to WMN that serve as the backbone for internet access. In these access networks is common to use the technique NAT (Network Address Translation), which does not used in AMI. When NAT is used, it is  necessary to preserve the output gateway for each connection, avoiding the breakage of TCP connections.
+
+The works in \cite{6412861} and \cite{Gharavi2011} are designed to meet the requirements of AMI networks and make use of multiple DAPs for communication between meters and headend modifying the HWMP protocol (Wireless Hybrid mesh Protocol). Although the work in \cite{Gharavi2011} solves some deficiencies of the HWMP protocol, it still suffers from other problems such as route stability and loops. According to the authors, this is a characteristic of the distributed backpressure system adopted by them. However, neither of them has evaluated the protocol behavior in an environment with a DAP failure, nor using adaptation of transmission rate, which increases the problem of instability of routes. They use a base protocol that has scalability problems and congestion caused by control messages \cite{5473885} making it difficult to use in AMI.
+
+
+Our proposal, DDSA, makes use of multiple DAPs for communication between meters and headend, and differs from \cite{6412861} and \cite{Gharavi2011} because it is designed to improve performance in environments with DAP failure and it is also be independent of the routing protocol and metric. Moreover, it can be implemented in a protocol that best suits the implementation of the AMI.
+In DDSA for each new data packet, meters probabilistically choose a DAP, from a set of available DAPs with good quality paths. 
+
+%Thus, improved performance and network resilience by distributing traffic among the DAP to each transmission, according to the probability of selection of each one, and provide resilience as if one is unavailable, it is possible to choose another.
+
+
+%\subsection{Routing Metrics}
+ 
+
+%MARA (Metric-Aware Rate Adaptation) \cite{6051505} is a mechanism that joins routing metric with rate adaptation for transmission in WMN through the concept of cross-layer design.
+%It uses statistical information of routing metrics to select the best rate and in turn, based on this choice, the metric can estimate the actual cost of the link.
+%Thus, metrics and rate adaptation share information and make decisions together resulting in better choices of routes by the routing protocol.
+%The calculation of the metric of a link is based on a conversion process in which first is estimated the SNR (Signal-to-noise ratio) from the link success probability of probe packets in a given transmission rate that can be of 1, 18, 36 or 54 Mbps.
+%With this SNR estimation is possible, by means of a probability function loss estimate the PER (Packet Error Rate) to other rates. Its advantage is that it solves the problem that metric and choice of rate are studied separately, although they are strongly related.
+
+
+\section{Dynamic DAP Selection Algorithm (DDSA)}
+
+
+The principle of the proposed algorithm is to randomly select a DAP using their respective path cost to define a probability to select each DAP. The better the cost for a given DAP, the higher the probability of selecting it. The use of multiple DAPs increases the reliability and performance of the routing, because it is possible to choose routes to the headend using any DAP.
+
+For each DAP $d_{j}$ the probability $P_{(m_{i},d_{j})}$ is computed by the meter $m_{i}$ by the expression: \begin{center}$ P_{(m_{i},d_{j})} =  \frac {M_{(m_{i},d_{j})}}{\sum\limits_{k=1}^{N} M_{(m_{i},d_{k})}} $  \  , \end{center} where $ {M_{(m_{i},d_{j})}} $ is the value of the quality metric of the path $(m_{i},d_{j})$, which is divided by the sum of all metric values ​​of the meter $ m_ {i} $ for all DAPs.  Notice that this expression assumes that the routing metrics assigns higher values for better paths. If the used metric employs a reverse logic, the following expression is used: \begin{center}$ P_{(m_{i},d_{j})} =  \frac {1/M_{(m_{i},d_{j})}}{\sum\limits_{k=1}^{N} 1/M_{(m_{i},d_{k})}} $  \  , \end{center}
+
+To prevent selection of DAPs with very low metrics, a threshold $\alpha$ is employed by the algorithm. In algorithm~\ref{prob} shows how the DAP choice is made for meter $m_{i}$, first the best metric is found, then its probability to be selected is computed. This probability is multiplied by $\alpha$, that have values between 0 and 1, resulting in a value $\gamma$ that is compared with others DAP's probability. If a DAP's probability is smaller than  $\gamma$ then it is discarded. The threshold $\alpha$ is a parameter of the DDSA algorithm  that affects the performance and the behavior of the network. A lower value of $\alpha$ implies in selecting more DAPs wich improving resilience in case of DAP faults, as opposed of higher value that selects only the best set of DAPs wich reduces the resilience.
+
+\IncMargin{1em}
+\begin{algorithm}
+\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+
+\Input{meter $m_{i}$, DAP vector $d$, number of DAP $N$, threshold value $\alpha$ }
+\Output{$ Selected\_DAP$}
+$Sum \leftarrow 0$, $Prob\_temp \leftarrow 0$, $best\_M \leftarrow 0$
+
+\emph{//sum of all metric values and select the best DAP }
+
+\For{$k \leftarrow 1$ \KwTo $N$}{
+$M_{m_{i}d_{k}} \leftarrow findMetric(m_{i},d_{k})$ 
+
+$Sum \leftarrow Sum + M_{m_{i}d_{k}}$
+
+\If{$best\_M < M_{m_{i}d_{k}}$}{
+$best\_M \leftarrow  M_{m_{i}d_{k}}$
+
+$Selected\_DAP \leftarrow d_{k}$
+}
+
+}
+\BlankLine
+$ Prob\_var \leftarrow randomUniform(0,1)$
+
+$\gamma \leftarrow \alpha * \frac {best\_M}{Sum} $
+
+\emph{//choosing DAP }
+
+\For{$k \leftarrow 1$ \KwTo $N$}{
+\If{$Prob\_temp >= Prob\_var$}{
+break
+}
+$M_{m_{i}d_{k}} \leftarrow findMetric(m_{i},d_{k}) $
+$cost \leftarrow \frac {M_{(m_{i},d_{k})}}{Sum}$
+\BlankLine
+\If {$cost >= \gamma $} {
+    $Prob\_temp \leftarrow Prob\_temp + cost $
+    $Selected\_DAP \leftarrow d_{k}$
+}
+
+}
+
+\KwRet
+{$ Selected\_DAP $}
+
+\BlankLine
+\caption{DAP selection algorithm}\label{prob}
+\end{algorithm}\DecMargin{1em}
+
+
+\section{Performance Evaluation}
+
+
+
+
+\subsection{Simulation Environment}  
+
+\begin{table}[htbp]
+\caption{Parameters of the shadowing propagation model used in the simulation.}
+\begin{center}\begin {tabular}{|l|r|}
+\hline
+	Path Loss Exponent & 2.7\\
+\hline
+	Standard Deviation & 7.4\\
+\hline
+	Reference Distance & 1.0\\
+\hline
+\end{tabular}
+\end{center}
+	\label{param}
+\end{table}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.24]{IEEE-consolidados/grid36-2.jpg}
+\caption{Scenario used in the simulation}
+\label{mapa}
+\end{figure}
+
+
+\begin  {figure}[hbt]
+\begin{minipage}[b]{1\linewidth}
+\centering
+\subfigure[Packet delivery for all nodes]
+{\label{pdf:a}\includegraphics[scale=.21]{IEEE-consolidados/G-pdf-app-desl.jpg}}
+
+\subfigure[Packet delivery for nodes 12-23]
+{\label{pdf:b}\includegraphics[scale=.21]{IEEE-consolidados/G-pdf-app-centro.jpg}}
+
+\subfigure[Packet delivery for node 16]
+{\label{pdf:c}\includegraphics[scale=.21]{IEEE-consolidados/G-pdf-app-16.jpg}}
+\end{minipage}
+\caption{Packet delivery}
+\label{pdf-app}
+\end{figure}
+
+
+
+
+
+\begin{figure*}[ht]
+  \centering
+  \mbox{
+    \subfigure[DDSA-30\%\label{DDSA-30}]{\includegraphics[scale=.33]{IEEE-consolidados/G-troca-gw-ddsa30.jpg}}\quad
+    \subfigure[DDSA-85\%\label{DDSA-85}]{\includegraphics[scale=.33]{IEEE-consolidados/G-troca-gw-ddsa85.jpg}}\quad
+    \subfigure[Multi-DAP\label{Multi-DAP}]{\includegraphics[scale=.33]{IEEE-consolidados/G-troca-gw-multidap.jpg}}
+  }
+  \caption{DAP's choice by node 16 before failure}
+  \label{n16-dap}
+\end{figure*}
+
+\begin{figure*}[ht]
+  \centering
+  \mbox{
+    \subfigure[DDSA-30\%\label{DDSA30-2}]{\includegraphics[scale=.33]{IEEE-consolidados/G-troca-gw-ddsa30-2.jpg}}\quad
+    \subfigure[DDSA-85\%\label{DDSA85-2}]{\includegraphics[scale=.33]{IEEE-consolidados/G-troca-gw-ddsa85-2.jpg}}\quad
+    \subfigure[Multi-DAP\label{MultiDAP-2}]{\includegraphics[scale=.33]{IEEE-consolidados/G-troca-gw-multidap-2.jpg}}
+  }
+  \caption{DAP's choice by node 16}
+  \label{n16-dap2}
+\end{figure*}
+
+
+
+
+The performance of the DDSA is evaluated via the ns-2 simulator \cite{ns-2:13}. 
+To simulate the behavior of a AMI network composed of  smart meters and DAPs the ns-2 is set to simulate a suburban external scenario using the shadowing propagation model with the parameters summarized in Table~\ref{param} and defined in \cite{Plan2011}.
+
+
+
+
+
+
+
+\subsection{Simulation Results}
+
+
+The used simulation topology used is composed of 36 nodes arranged in a grid and 3 DAPs (Fig.~\ref{mapa}). To simulate the exchange of information between meters and DAPs in a typical application of AMI, a Constant Bit Rate (CBR) UDP traffic is used with fixed packet size of 400B \cite{Plan2011} at the rate of 20 packets per minute. Each node sends 25 flows of data in a synchronized way for every round of transmission. The UDP is an unreliable transport protocol, but has some advantages such low latency. To make it more reliable its necessary to implement a application layer protocol over UDP that implements its own transport service \cite{RFC6272}. The exchange of information starts at time of 150 seconds and the DAP 2 failure occurs  at the time 300 seconds. A total of 10 simulations were performed with a duration of 1150 seconds and in charts the confidence interval is 95\%.
+
+
+
+The DDSA was implemented in ns-2 simulator using OLSR \cite{clausen2003optimized} as the routing protocol. MARA \cite{6051505} was employed as the routing metric and rate adaptation. In assessing the results were evaluated:
+
+\begin{itemize}
+  \item[(1)] DDSA with $\alpha$ = 0,3 referred as DDSA-30\%;
+  \item[(2)] DDSA with $\alpha$ = 0,85 referred as DDSA-85\%; and
+  \item[(3)] the mechanism for dynamic gateway selection that chooses the best DAP  according to routing metric at the time of sending the data packet. We refer to this as Multi-DAP.
+\end{itemize}
+ 
+
+
+
+The packet delivery rate in Figure~\ref{pdf-app} was calculated for the application layer. We compute as failure in delivery packet if none of the flows packet in a round is not received by any of the DAPs.
+In Figure~\ref{pdf:a} shows packet delivery rate for all nodes as a function of time, considering the latest 20 samples. It is noticeable that the DDSA-30\% performance is better than others proposals after the occurrence of DAP 2 failure. At time 363 seconds DDSA-30\% has about 95\% of packet delivery rate, DDSA-85\% has 73\% and Multi-DAP has 69\%. 
+This was achieved because DDSA-30\%, mainly in central region of the network (nodes 12 to 23), is the less affected by the failure of the DAP. It is noticed this behavior of the DDSA-30\% in Figure~\ref{pdf:b} that, at time of 363 seconds, has about 86\% of packet delivery rate and DDSA-85\% and Multi-DAP has only 20,7\% and 11,8\% respectively. This shows that the tendency to distribute more packets among DAPs makes it more robust and resilient than others when a failure occurs. 
+Figure~\ref{pdf:c}  analyzes the behavior of the packet delivery rate for one node. Node 16 was chosen because it is located geographically with the same distance for 2 DAPs. Note that with DDSA-30\%, when DAP 2 fails, the reduction in the rate was not as sharp as for the other proposals, becoming 77\% and 85\% better than DDSA-85\% and Multi-DAP, respectively, at time 363 seconds. 
+
+
+To understand how the behavior of DDSA differs from the behavior of Multi-DAP in terms of DAP selection, in Figure~\ref{n16-dap} we shown the choices of nodes 16 using the three proposals during the simulations with a single seed for the period prior to the DAP failure. 
+As seen, the choice of $\alpha$ affects the behavior in choosing DAP. Notice how the lower $\alpha$ (Fig.~\ref{DDSA-30}) causes the farthest DAP to be chosen.
+The higher $\alpha$ (Fig.~\ref{DDSA-85}) makes choices alternating between DAP 1 and DAP 2 that are closest and have better metrics, excluding DAP 3 for having a quality that is too low.
+The Multi-DAP (Fig.~\ref{Multi-DAP}) rarely makes exchanges between DAP, having only used a different DAP in the last 25 seconds shown in the graph.
+
+
+Figure~\ref{n16-dap2} shows the same information of Figure~\ref{n16-dap}, but extends the view to whole simulation. 
+After the occurrence of DAP 2 failure at time 300 seconds it is verified that the packets from nodes 16 are not received by any DAP for a long time in the simulations with DDSA-85\% and Multi-DAP.
+For the DDSA-85\%(Fig.~\ref{DDSA85-2}) the gap to deliver new packets lasted 64 seconds. For Multi-DAP (Fig.~\ref{MultiDAP-2}), the gap lasted 81 seconds. This happens because before failure they start to send packets only to DAP 2. Note that for DDSA-30\% (Fig.~\ref{DDSA30-2}), there is no noticeable gap because node 16 already balances the load among all DAP.
+
+\begin{figure}[ht]
+  \centering
+  \label{intv-dap}{\includegraphics[scale=.21]{IEEE-consolidados/G-wo-rcv-pkt.jpg}} 
+  \caption{Sum of intervals without receiving packets in any DAP}
+  \label{sum-intv}
+\end{figure}
+
+
+To check if this behavior is shared by other nodes, we gathered the information shown in Figure~\ref{sum-intv}. For each node we computed all intervals in which no packet was received by any of the DAP and we summed that value over the duration of the simulation.
+ It is noticed that this behavior is repeated for nodes in the central region of the network, \textit{i.e.}, with DDSA-85\% and the Multi-DAP these nodes suffered long delays to deliver packets to any DAP, while DDSA-30\% sustained lower delays. The average time without receiving packets with DDSA-30\% was 11,5 seconds, with DDSA-85\% was 40,9 seconds and with Multi-DAP was 49,8 seconds. 
+Notice that even for node 13, for which the DDSA-30\% totaled 108 seconds without delivering packets, its performance was better than with the two other proposals (163 seconds with the DDSA-85\% and 171 seconds with the Multi-DAP). This node and node 14 are the closest ones to the failed DAP 2, thus suffering more influence of this failure, because its path cost is much better compared to the other DAP.
+
+
+\begin{figure}[ht]
+  \centering
+  \label{intv-dap}{\includegraphics[scale=.21]{IEEE-consolidados/G-no-pdf-app.jpg}} 
+  \caption{Packet delivery by all nodes}
+  \label{pdf-node}
+\end{figure}
+
+
+
+Finally, Figure~\ref{pdf-node} shows the packet delivery rate for all nodes as a function of time considering all simulation time. It is observed that the central region of the network is the most affected by the failure of the DAP. For these nodes, the DDSA-30\% is the less affected by the fault with a performance above DDSA-85 \% and Multi-DAP, where most of nodes in the central region showed a low packet delivery rates.
+
+   
+   
+\section{Conclusion}
+
+This work presented DDSA, dynamic DAP selection algorithm to increase the reliability and resilience of AMI applications through the use of multiple DAPs in WMN networks. In this kind of network, the DAP has an important role in exchanging information between the meter and the headend because all traffic flows through it. A failure in a DAP difficult the exchange of information on the AMI network, so alternative routes through other DAPs should be used after failure to continue occurring communication between meters and headend.
+
+The results obtained showed that the DDSA increased the resilience of routing protocol even suffering with DAP failure evidenced by lower loss in performance. The results also showed the importance of the choice of the $\alpha$ parameter that influences the routing behavior. Lower values favoring resilience than higher values, because it distributes more packets among DAPs even to the farthest DAP.
+
+
+For future work we intend to do a deeper analysis in variation of $\alpha$ parameter to observe the behavior of DDSA and find a value that brings more resilience in routing. 
+Also is intention to study the use of dynamic variation of the $\alpha$ parameter analyzing other metrics to improve the performance and resilience in a region with failure.
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+
+
+This work is supported in part by CNPq, CAPES, FAPERJ, TBE/ANEEL and CELESC/ANEEL.
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\bibliographystyle{IEEEtran}
+\bibliography{./sbc-template}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{picture}}]{John Doe}
+\blindtext
+\end{IEEEbiography}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+
+% that's all folks
+\end{document}
+
+
+
