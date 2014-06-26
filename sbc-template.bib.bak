@@ -163,7 +163,7 @@
 @INPROCEEDINGS{4781067,
   author = {Bennett, C. and Highfill, D.},
   title = {Networking {AMI} Smart Meters},
-  booktitle = {IEEE Energy 2030 Conference, 2008. ENERGY 2008.},
+  booktitle = {IEEE Energy 2030 Conference.},
   year = {2008},
   __markedentry = {[victor:4]},
   comment = {Citado por 78},
@@ -222,7 +222,7 @@
 @ARTICLE{5473885,
   author = {Carrano, R.C. and Magalh\~aes, L.C.S. and Saade, D. C M and Albuquerque,
 	C. V N},
-  title = {{IEEE} 802.11s Multihop MAC: A Tutorial},
+  title = {{IEEE} 802.11s Multihop {MAC: A T}utorial},
   journal = {IEEE Communications Surveys Tutorials},
   year = {2011},
   volume = {13},
@@ -264,8 +264,8 @@
   author = {Clausen, Thomas and Jacquet, Philippe and Adjih, C{\'e}dric and Laouiti,
 	Anis and Minet, Pascale and Muhlethaler, Paul and Qayyum, Amir and
 	Viennot, Laurent and others},
-  title = {Optimized link state routing protocol (OLSR)},
-  journal = {RFC 3626, Oct. 2003},
+  title = {Optimized link state routing protocol {(OLSR)}},
+  journal = {RFC 3626, Oct.},
   year = {2003}
 }
 
@@ -294,8 +294,7 @@
   author = {Deconinck, G.},
   title = {An evaluation of two-way communication means for advanced metering
 	in Flanders (Belgium)},
-  booktitle = {IEEE Instrumentation and Measurement Technology Conference Proceedings,
-	2008. IMTC 2008.},
+  booktitle = {IEEE Instrumentation and Measurement Technology Conference Proceedings.},
   year = {2008},
   comment = {Citado por 36},
   doi = {10.1109/IMTC.2008.4547164},
@@ -378,7 +377,7 @@
 
 @ARTICLE{Fang2012,
   author = {Fang, Xi and Misra, Satyajayant and Xue, Guoliang and Yang, Dejun},
-  title = {Smart Grid - The New and Improved Power Grid: A Survey},
+  title = {Smart Grid - The New and Improved Power Grid: A {S}urvey},
   journal = {IEEE Communications Surveys \& Tutorials},
   year = {2012},
   volume = {14},
@@ -764,6 +763,7 @@
   year = {2010},
   pages = {320-325},
   month = {June},
+  __markedentry = {[victor:5]},
   abstract = {There is an emerging class of applications in which there is a need
 	to reliably transport data from a large number of low rate devices
 	(e.g., hundreds of thousands) to a central server. Atop the list
@@ -772,24 +772,24 @@
 	pollution, and allergy conditions. These applications are characterized
 	by the existence of a >>> large number of small Internet Protocol
 	(IP) devices sending small packets at a low rate to the same server.<<<
-	 Even though individual data rates are low, aggregation of these
-	rates produce a >>>significant amount of traffic that can disrupt
-	the communication function of other applications<<<<. Because individual
-	devices produce data at a low rate, the >>>>>>> transmission control
-	protocol's (TCP) congestion control mechanism is rendered ineffective,
-	thereby causing (i) excessive retransmission of packets; and (ii)
-	degrading the throughput of other competing applications.<<<<<<<
-	To address the above problems, we introduce the concept of aggregation
-	at the communication transport level. A TCP aggregator node is added
-	between the data sources and the central server. It splits the TCP
-	connections between the sources (e.g., smart meters) and the data
-	collection server. The aggregator collects data from the individual
-	sources and reliably forwards the data to the collection server.
-	The new strategy provides better response to traffic conditions and,
-	most importantly, makes congestion control and flow control useful.
-	Through extensive NS-2 simulations, we show the effectiveness of
-	the TCP aggregator approach to mitigating the problems in terms of
-	the throughput and packet drop rate performance metrics.},
+	Even though individual data rates are low, aggregation of these rates
+	produce a >>>significant amount of traffic that can disrupt the communication
+	function of other applications<<<<. Because individual devices produce
+	data at a low rate, the >>>>>>> transmission control protocol's (TCP)
+	congestion control mechanism is rendered ineffective, thereby causing
+	(i) excessive retransmission of packets; and (ii) degrading the throughput
+	of other competing applications.<<<<<<< To address the above problems,
+	we introduce the concept of aggregation at the communication transport
+	level. A TCP aggregator node is added between the data sources and
+	the central server. It splits the TCP connections between the sources
+	(e.g., smart meters) and the data collection server. The aggregator
+	collects data from the individual sources and reliably forwards the
+	data to the collection server. The new strategy provides better response
+	to traffic conditions and, most importantly, makes congestion control
+	and flow control useful. Through extensive NS-2 simulations, we show
+	the effectiveness of the TCP aggregator approach to mitigating the
+	problems in terms of the throughput and packet drop rate performance
+	metrics.},
   doi = {10.1109/ICUFN.2010.5547188},
   keywords = {Internet;Reliability;Throughput;Transport protocols;Wireless communication;Wireless
 	sensor networks}
@@ -810,7 +810,7 @@
 @ARTICLE{6412861,
   author = {Kim, Jaebeom and Kim, Dabin and Lim, {Keun-Woo} and Ko, {Young-Bae}
 	and Lee, {Sang-Youm}},
-  title = {Improving the reliability of IEEE 802.11s based wireless mesh networks
+  title = {Improving the reliability of {IEEE} 802.11s based wireless mesh networks
 	for smart grid systems},
   journal = {Journal of Communications and Networks},
   year = {2012},
@@ -875,9 +875,8 @@
 @INPROCEEDINGS{5622071,
   author = {Lichtensteiger, B. and Bjelajac, B. and Muller, C. and Wietfeld,
 	C.},
-  title = {{RF} Mesh Systems for Smart Metering: System Architecture and Performance},
-  booktitle = {First IEEE International Conference on Smart Grid Communications
-	(SmartGridComm), 2010},
+  title = {{RF M}esh Systems for Smart Metering: System Architecture and Performance},
+  booktitle = {IEEE International Conference on Smart Grid Communications},
   year = {2010},
   comment = {Citado por 50},
   doi = {10.1109/SMARTGRID.2010.5622071},
@@ -921,7 +920,7 @@
 	Hu},
   title = {Application of power line communication in smart power Consumption},
   booktitle = {IEEE International Symposium on Power Line Communications and Its
-	Applications (ISPLC), 2010 },
+	Applications},
   year = {2010},
   doi = {10.1109/ISPLC.2010.5479945},
   keywords = {carrier transmission on power lines;power consumption;smart power
@@ -948,8 +947,7 @@
 @INPROCEEDINGS{5484223,
   author = {Wenpeng Luan and Sharp, D. and Lancashire, S.},
   title = {Smart grid communication network capacity planning for power utilities},
-  booktitle = {IEEE PES Transmission and Distribution Conference and Exposition,
-	2010},
+  booktitle = {IEEE PES Transmission and Distribution Conference and Exposition},
   year = {2010},
   month = {April},
   __markedentry = {[victor:1]},
@@ -1120,7 +1118,7 @@
   author = {Parikh, P.P. and Kanabar, M.G. and Sidhu, T.S.},
   title = {Opportunities and challenges of wireless communication technologies
 	for smart grid applications},
-  booktitle = {IEEE Power and Energy Society General Meeting, 2010},
+  booktitle = {IEEE Power and Energy Society General Meeting},
   year = {2010},
   comment = {Citado por 127},
   doi = {10.1109/PES.2010.5589988},
@@ -1341,8 +1339,7 @@
 	Igor and de Albuquerque, C{\'e}lio Vinicius Neves},
   title = {Dyntun: A tool for providing multihoming support in wireless mesh
 	networks},
-  booktitle = {International Information and Telecommunication Technologies Symposium
-	(I2TS), 2010},
+  booktitle = {International Information and Telecommunication Technologies Symposium},
   year = {2010},
   __markedentry = {[victor:2]},
   comment = {Cited by 3},
